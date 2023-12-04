@@ -17,7 +17,7 @@ class GameBrain {
     var numLetters = 0
     var secondsRemaining = 30
     var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-    
+    let coreDataManager = CoreDataManager()
     
     func generateRandomLetters() -> [String] {
         var randomGameLetters: [String] = []
@@ -41,7 +41,6 @@ class GameBrain {
     }
     
     func newGame(numLetters: Int){
-        
         self.numLetters = numLetters
         secondsRemaining = 30
         score = 0

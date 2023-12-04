@@ -12,10 +12,15 @@ class StartViewController: UIViewController {
     
     let gameBrain = GameBrain.shared
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        var highScoreText = gameBrain.highScore
+        if gameBrain.score != 0 {
+            CoreDataManager.shared.addScore(score: gameBrain.score)
+        } 
+        
+        var highScoreText = CoreDataManager.shared.calculateHighScore()
         
         highScore.text = "High Score:\(highScoreText)"
         
@@ -30,4 +35,5 @@ class StartViewController: UIViewController {
     //    }
     //
     //
+    
 }

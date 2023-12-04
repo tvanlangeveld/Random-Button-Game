@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01G-lc-rZp">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -31,7 +30,7 @@
         <!--Start View Controller-->
         <scene sceneID="gDe-IS-fs8">
             <objects>
-                <viewController id="Dhk-ri-Pkb" customClass="StartViewController" customModule="DMFindingGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dhk-ri-Pkb" customClass="StartViewController" customModule="RandomButtonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="center" id="Ib1-hP-ICi" customClass="Start">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,6 +59,17 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMd-Te-vSw">
+                                <rect key="frame" x="128" y="733" width="134" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="See All Scores">
+                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="emu-4E-l66" kind="presentation" id="6LS-fn-rlK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n3i-Je-Wae"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -80,7 +90,7 @@
         <!--Game View Controller-->
         <scene sceneID="uBD-Ng-N4y">
             <objects>
-                <viewController id="cLM-BX-Ev8" customClass="GameViewController" customModule="DMFindingGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cLM-BX-Ev8" customClass="GameViewController" customModule="RandomButtonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ZV-5E-ebi">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -365,6 +375,56 @@
             </objects>
             <point key="canvasLocation" x="2803" y="-9"/>
         </scene>
+        <!--Score View Controller-->
+        <scene sceneID="m6O-dH-DXc">
+            <objects>
+                <viewController id="emu-4E-l66" customClass="ScoreViewController" customModule="RandomButtonApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="38c-HB-69g">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dvI-oc-6UI">
+                                <rect key="frame" x="0.0" y="128.66666666666669" width="390" height="658.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreCell" id="rJl-Ea-BO6">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rJl-Ea-BO6" id="Y2U-JQ-nzE">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFm-3o-vnX">
+                                <rect key="frame" x="31" y="65" width="328" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nJe-CG-rQs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iFm-3o-vnX" firstAttribute="top" secondItem="38c-HB-69g" secondAttribute="topMargin" constant="18" id="3ui-eS-8QU"/>
+                            <constraint firstItem="iFm-3o-vnX" firstAttribute="centerX" secondItem="38c-HB-69g" secondAttribute="centerX" id="ACZ-SH-ECg"/>
+                            <constraint firstItem="iFm-3o-vnX" firstAttribute="leading" secondItem="38c-HB-69g" secondAttribute="leadingMargin" constant="15" id="BCD-bP-HId"/>
+                            <constraint firstItem="dvI-oc-6UI" firstAttribute="trailing" secondItem="nJe-CG-rQs" secondAttribute="trailing" id="R3L-Xz-s5m"/>
+                            <constraint firstItem="dvI-oc-6UI" firstAttribute="top" secondItem="iFm-3o-vnX" secondAttribute="bottom" constant="30" id="c9R-wb-omk"/>
+                            <constraint firstItem="dvI-oc-6UI" firstAttribute="bottom" secondItem="nJe-CG-rQs" secondAttribute="bottom" id="drg-M8-wKG"/>
+                            <constraint firstItem="dvI-oc-6UI" firstAttribute="leading" secondItem="nJe-CG-rQs" secondAttribute="leading" id="ooS-tT-O6f"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="akk-SA-Omp"/>
+                    <connections>
+                        <outlet property="tableView" destination="dvI-oc-6UI" id="cBe-Uk-J4W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hI-P3-rSp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2703.0769230769229" y="779.8578199052132"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
@@ -375,4 +435,3 @@
         </systemColor>
     </resources>
 </document>
-
